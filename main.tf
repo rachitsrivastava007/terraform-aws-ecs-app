@@ -168,7 +168,7 @@ module "container_definition_fluentbit" {
   }
 
   map_environment = {
-    FLUENTD_HOSTNAME = "fluentd.${module.this.organizational_unit}-monitoring.${var.domain}"
+    FLUENTD_HOSTNAME = "fluentd-eck.${module.this.organizational_unit}-monitoring.${var.domain}"
     FLUENTD_PORT     = 15000
     TAG              = "${module.this.environment}-${module.this.namespace}-${module.this.stage}-${module.this.name}"
   }
