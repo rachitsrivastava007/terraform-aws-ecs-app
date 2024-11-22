@@ -33,7 +33,7 @@ data "aws_ssm_parameter" "grafana_token" {
 
 data "aws_lb" "default" {
   count = length(var.alb_name) > 0 ? 1 : 0
-  name  = "${module.this.environment}-${var.alb_name}"
+  name  = "${var.alb_name}"
 }
 
 data "aws_lb_listener" "http" {
