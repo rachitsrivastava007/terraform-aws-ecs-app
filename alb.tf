@@ -12,7 +12,7 @@ module "alb_ingress" {
   unauthenticated_priority      = var.alb_unauthenticated_priority
   unauthenticated_paths         = var.alb_unauthenticated_paths
   unauthenticated_hosts         = var.alb_unauthenticated_hosts
-  unauthenticated_listener_arns = [data.aws_lb_listener.http[0].arn, data.aws_lb_listener.https[0].arn]
+  unauthenticated_listener_arns = [data.aws_lb_listener.https[0].arn]
 
   health_check_path     = var.alb_health_check_path
   health_check_matcher  = var.alb_health_check_matcher

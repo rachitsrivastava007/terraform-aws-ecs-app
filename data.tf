@@ -36,12 +36,6 @@ data "aws_lb" "default" {
   name  = "${var.alb_name}"
 }
 
-data "aws_lb_listener" "http" {
-  count             = length(var.alb_name) > 0 ? 1 : 0
-  load_balancer_arn = data.aws_lb.default[0].arn
-  port              = 80
-}
-
 data "aws_lb_listener" "https" {
   count             = length(var.alb_name) > 0 ? 1 : 0
   load_balancer_arn = data.aws_lb.default[0].arn
